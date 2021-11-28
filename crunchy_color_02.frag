@@ -10,13 +10,13 @@ uniform vec2 u_mouse;
 uniform float u_time;
 
 float plot(vec2 st, float pct, float rnd) {    
-    return  smoothstep(pct-0.0001+rnd*(-0.3), pct, st.y) -
-          smoothstep(pct, pct+0.001-rnd*(-0.7), st.y);
+    return  smoothstep(pct-0.0001+rnd*(-0.8), pct, st.y) -
+          smoothstep(pct, pct+0.0001-rnd*(-0.8), st.y);
 }
 
 float line_plot(vec2 st, float pct, float rnd) {    
-    return  smoothstep(pct-0.0001+rnd*(-0.3), pct, st.y) -
-          smoothstep(pct, pct+0.0001-rnd*(-0.7), st.y);
+    return  smoothstep(pct-0.0001+rnd*(-0.8), pct, st.y) -
+          smoothstep(pct, pct+0.0001-rnd*(-0.8), st.y);
 }
 
 float random (vec2 st) {
@@ -31,8 +31,9 @@ void main() {
     float y = 0.5+(0.6*sin(st.x*cos(0.4*u_time)*PI));
     //float y_c = sin(u_time)+sqrt(1.0-pow((st.x-0.5),2.0));
     float y_c = sin(u_time)+sin(st.x);
+    float rnd_2 = step(0.2, random(st));
 
-    vec3 color = vec3(1.0, 0.5, y);
+    vec3 color = vec3(0.8+abs(sin(u_time))*0.2, 0.5, y+rnd_2*0.3);
     float rnd = step(0.2,random(st));
 
     float pct = plot(st,y, rnd);
