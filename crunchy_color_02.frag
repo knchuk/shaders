@@ -33,7 +33,7 @@ void main() {
     float y_c = sin(u_time)+sin(st.x);
     float rnd_2 = step(0.2, random(st));
 
-    vec3 color = vec3(0.2+abs(sin(u_time))*0.2, 0.01+abs(cos(u_time))*0.2, y+rnd_2*0.3);
+    vec3 color = vec3(0.4+abs(sin(u_time))*0.2, 0.03, y+rnd_2*0.3);
     float rnd = step(0.2,random(st));
 
     float pct = plot(st,y, rnd);
