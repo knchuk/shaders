@@ -17,7 +17,7 @@ void main() {
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
     st.x *= u_resolution.x/u_resolution.y;
     vec4 bg_color = vec4(0.635,0.628,0.279,0.0);
-    vec4 t_color = vec4(0.068+0.2*abs(sin(u_time/6.0)),0.215+0.6*abs(sin(u_time/8.0)),0.240+0.7*abs(sin(u_time/4.0)),0.7);
+    vec4 t_color = vec4(0.068+0.2*abs(sin(u_time/6.0)),0.0215+0.6*abs(sin(u_time/8.0)),0.0240+0.7*abs(sin(u_time/4.0)),0.7);
     
     float rnd = step(0.156+0.05*sin(u_time),random(st));
     
