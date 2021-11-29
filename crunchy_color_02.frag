@@ -43,5 +43,5 @@ void main() {
     vec3 cir_color = vec3(0.190,0.285,0.285);
     color = (1.0-pct)*(1.0-cir)*color+pct*line_color+cir*cir_color;
     
-	gl_FragColor = vec4(color,1.0);
+	gl_FragColor = vec4(color,0.6);
 }
