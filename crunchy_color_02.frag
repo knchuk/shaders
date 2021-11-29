@@ -33,7 +33,7 @@ void main() {
     float y_c = sin(u_time)+sin(st.x);
     float rnd_2 = step(0.2, random(st));
 
-    vec3 color = vec3(0.02+abs(sin(u_time))*0.2, 0.01+abs(cos(u_time))*0.2, y+rnd_2*0.3);
+    vec3 color = vec3(0.2+abs(sin(u_time))*0.2, 0.01+abs(cos(u_time))*0.2, y+rnd_2*0.3);
     float rnd = step(0.2,random(st));
 
     float pct = plot(st,y, rnd);
@@ -43,5 +43,5 @@ void main() {
     vec3 cir_color = vec3(0.190,0.285,0.285);
     color = (1.0-pct)*(1.0-cir)*color+pct*line_color+cir*cir_color;
     
-	gl_FragColor = vec4(color,0.6);
+	gl_FragColor = vec4(color,1.0);
 }
